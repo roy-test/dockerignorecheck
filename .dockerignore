@@ -12,5 +12,4 @@ class/[\^\\\-_]gnore
 !go.html
 *.html
 
-Dockerfile
 .dockerignore
