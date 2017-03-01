@@ -1,0 +1,16 @@
+/some.txt
+dir
+txt/
+**/*l
+!dir/some.bin
+g*
+
+class/[Ii]gnore
+class/ignore[a-z]
+class/[\^\\\-_]gnore
+
+!go.html
+*.html
+
+Dockerfile
+.dockerignore
