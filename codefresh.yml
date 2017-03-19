@@ -1,0 +1,7 @@
+version: '1.0'
+steps:
+  build:
+    image: busybox:latest
+    commands:
+      - echo TEST:${{TEST}}
+      - echo TEST1:${{TEST1}}
