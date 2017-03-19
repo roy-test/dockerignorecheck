@@ -3,5 +3,5 @@ steps:
   build:
     image: busybox:latest
     commands:
-      - echo TEST:${{TEST}}
-      - echo TEST1:${{TEST1}}
+      - echo 'TEST:${{TEST}}'
+      - echo 'TEST1:${{TEST1}}'
