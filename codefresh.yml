@@ -4,4 +4,4 @@ steps:
     image: busybox:latest
     commands:
       - echo 'TEST:${{TEST}}'
-      - echo TEST1:
+      - echo TEST1:${{TEST1}}
