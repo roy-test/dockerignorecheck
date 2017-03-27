@@ -5,3 +5,13 @@ steps:
     commands:
       - echo 'TEST:${{TEST}}'
       - echo 'TEST1:${{TEST1}}'
+  push:
+    type: push
+    title: ECR push
+    description: Free text description
+    candidate: ${{build_step_name}}
+    provider: ecr
+    tag: latest
+    accessKeyId: $AWS_ACCESS_KEY
+    secretAccessKey: $AWS_SECRET
+    region: eu-central-1
