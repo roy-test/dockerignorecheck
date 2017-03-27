@@ -12,6 +12,6 @@ steps:
     candidate: ${{build_step_name}}
     provider: ecr
     tag: latest
-    accessKeyId: $AWS_ACCESS_KEY
-    secretAccessKey: $AWS_SECRET
+    accessKeyId: ${{AWS_ACCESS_KEY}}
+    secretAccessKey: ${{AWS_SECRET}}
     region: eu-central-1
