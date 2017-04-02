@@ -1,17 +1,23 @@
 version: '1.0'
 steps:
   build:
-    image: busybox:latest
-    commands:
-      - echo 'TEST:${{TEST}}'
-      - echo 'TEST1:${{TEST1}}'
+    image_name: roycodefresh/dockerignorecheck
+    working_directory: ./
+    dockerfile: Dockerfile
   push:
     type: push
-    title: ECR push
-    description: Free text description
-    candidate: ${{build_step_name}}
-    provider: ecr
-    tag: latest
-    accessKeyId: ${{AWS_ACCESS_KEY}}
-    secretAccessKey: ${{AWS_SECRET}}
-    region: eu-central-1
+    title: Standard Push
+    provider: docker
+    registry: 192.168.99.100:5001
+    tag: master
+    candidate: ${{build}}
+#  push:
+#    type: push
+#    title: ECR push
+#    description: Free text description
+#    candidate: ${{build_step_name}}
+#    provider: ecr
+#    tag: latest
+#    accessKeyId: ${{AWS_ACCESS_KEY}}
+#    secretAccessKey: ${{AWS_SECRET}}
+#    region: eu-central-1
