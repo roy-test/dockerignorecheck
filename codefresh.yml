@@ -15,7 +15,7 @@ steps:
     candidate: ${{build}}
   push2:
     type: push
-    title: Standard push to registry1
+    title: Standard push to registry2
     provider: docker
     registry: 192.168.99.100:5002
     tag: hello-world
