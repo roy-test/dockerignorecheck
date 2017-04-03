@@ -1,13 +1,7 @@
-FROM busybox
-
-LABEL "roy"="label"
-
-# RUN sleep 60000
+FROM 192.168.99.100:5002/hello/world:mine
 
 COPY . /check
 
 WORKDIR /check
-
-# RUN npm install gulp babel angular-cli ember-cli
 
 CMD [ "/bin/find", ".", "-type", "f"]
