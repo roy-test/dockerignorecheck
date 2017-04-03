@@ -13,6 +13,13 @@ steps:
     registry: 192.168.99.100:5001
     tag: master
     candidate: ${{build}}
+  push:
+    type: push
+    title: Standard Push
+    provider: docker
+    registry: 192.168.99.100:5002
+    tag: hello-world
+    candidate: ${{build}}
 #  push:
 #    type: push
 #    title: ECR push
