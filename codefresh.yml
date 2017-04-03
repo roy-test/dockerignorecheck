@@ -6,16 +6,16 @@ steps:
     image_name: roycodefresh/dockerignorecheck
     working_directory: ./
     dockerfile: Dockerfile
-  push:
+  push1:
     type: push
-    title: Standard Push
+    title: Standard push to registry1
     provider: docker
     registry: 192.168.99.100:5001
     tag: master
     candidate: ${{build}}
-  push:
+  push2:
     type: push
-    title: Standard Push
+    title: Standard push to registry1
     provider: docker
     registry: 192.168.99.100:5002
     tag: hello-world
