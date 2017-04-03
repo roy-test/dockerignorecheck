@@ -20,6 +20,13 @@ steps:
     registry: 192.168.99.100:5002
     tag: hello-world
     candidate: ${{build}}
+  ecr:
+    type: push
+    title: Standard push to amazon ECR
+    provider: docker
+    registry: 839151377425.dkr.ecr.us-east-1.amazonaws.com
+    tag: roycheck:hello-world
+    candidate: ${{build}}
 #  push:
 #    type: push
 #    title: ECR push
