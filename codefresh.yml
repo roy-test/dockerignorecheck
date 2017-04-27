@@ -1,11 +1,11 @@
 version: '1.0'
 steps:
-  build:
-    title: Building Docker Image
-    type: build
-    image_name: roycodefresh/dockerignorecheck
-    working_directory: ./
-    dockerfile: Dockerfile
+#  build:
+#    title: Building Docker Image
+#    type: build
+#    image_name: roycodefresh/dockerignorecheck
+#    working_directory: ./
+#    dockerfile: Dockerfile
 #  dockerhub:
 #    type: push
 #    title: Standard push to dockerhub
