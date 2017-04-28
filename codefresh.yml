@@ -14,7 +14,6 @@ steps:
   push1:
     type: push
     title: Standard push to registry1
-    registry: Registry2
     tag: master
     candidate: ${{build}}
     credentials:
