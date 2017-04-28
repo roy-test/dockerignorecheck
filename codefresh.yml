@@ -1,11 +1,11 @@
 version: '1.0'
 steps:
-#  build:
-#    title: Building Docker Image
-#    type: build
-#    image_name: roycodefresh/dockerignorecheck
-#    working_directory: ./
-#    dockerfile: Dockerfile
+  build:
+    title: Building Docker Image
+    type: build
+    image_name: roycodefresh/dockerignorecheck
+    working_directory: ./
+    dockerfile: Dockerfile
 #  dockerhub:
 #    type: push
 #    title: Standard push to dockerhub
@@ -16,7 +16,7 @@ steps:
     title: Standard push to registry1
     registry: Registry
     tag: master
-    candidate: busybox:latest
+    candidate: ${{build}}
     credentials:
       username: roy
       password: '123456'
