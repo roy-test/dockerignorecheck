@@ -16,7 +16,7 @@ steps:
     title: Standard push to registry1
     registry: Registry
     tag: master
-    candidate: busybox
+    candidate: busybox:latest
     credentials:
       username: roy
       password: '123456'
