@@ -11,13 +11,13 @@ steps:
 #    title: Standard push to dockerhub
 #    tag: master
 #    candidate: ${{build}}
-  push1:
-    type: push
-    title: Standard push to registry1
-    tag: master
-    candidate: ${{build}}
-    registry: gcr
-    image_name: 'cf-ci-1027/dockerignorecheck'
+#  push1:
+#   type: push
+#   title: Standard push to registry1
+#   tag: master
+#   candidate: ${{build}}
+#   registry: gcr
+#   image_name: 'cf-ci-1027/dockerignorecheck'
 #  push2:
 #    type: push
 #    title: Standard push to registry2
