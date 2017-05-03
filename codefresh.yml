@@ -17,7 +17,7 @@ steps:
     tag: master
     candidate: ${{build}}
     registry: gcr
-    image_name: cf-ci-1027/dockerignorecheck
+    image_name: 'cf-ci-1027/dockerignorecheck'
     tag: mytag
 #  push2:
 #    type: push
