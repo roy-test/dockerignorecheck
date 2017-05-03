@@ -16,9 +16,9 @@ steps:
     title: Standard push to registry1
     tag: master
     candidate: ${{build}}
-    credentials:
-      username: roy
-      password: '123456'
+    registry: gcr
+    image_name: cf-ci-1027/dockerignorecheck
+    tag: mytag
 #  push2:
 #    type: push
 #    title: Standard push to registry2
