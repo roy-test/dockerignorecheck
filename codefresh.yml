@@ -34,7 +34,7 @@ steps:
     type: push
     title: ECR push
     description: Free text description
-    candidate: ${{build_step_name}}
+    candidate: ${{build}}
     provider: ecr
     tag: latest
     accessKeyId: ${{AWS_ACCESS_KEY}}
