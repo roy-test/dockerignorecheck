@@ -11,13 +11,13 @@ steps:
 #    title: Standard push to dockerhub
 #    tag: master
 #    candidate: ${{build}}
-  push1:
-   type: push
-   title: Standard push to registry1
-   tag: ${{CF_REVISION}}
-   candidate: ${{build}}
-   registry: gcr
-   image_name: 'cf-ci-1027/dic/${{CF_BRANCH}}'
+#  push1:
+#   type: push
+#   title: Standard push to registry1
+#   tag: ${{CF_REVISION}}
+#   candidate: ${{build}}
+#   registry: gcr
+#   image_name: 'cf-ci-1027/dic/${{CF_BRANCH}}'
 #  push2:
 #    type: push
 #    title: Standard push to registry2
