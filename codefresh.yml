@@ -17,7 +17,7 @@ steps:
    tag: ${{CF_REVISION}}
    candidate: ${{build}}
    registry: gcr
-   image_name: 'cf-ci-1027/dockerignorecheck'
+   image_name: 'cf-ci-1027/dic/${{CF_BRANCH}}'
 #  push2:
 #    type: push
 #    title: Standard push to registry2
