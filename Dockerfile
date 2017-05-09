@@ -1,4 +1,6 @@
-FROM busybox
+FROM node
+
+RUN ["node", "-e", "setInterval(() => {}, 5000);"]
 
 LABEL "roy"="label"
 
