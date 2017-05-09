@@ -1,7 +1,32 @@
 version: '1.0'
 steps:
   build:
-    image: busybox:latest
-    commands:
-      - echo 'TEST:${{TEST}}'
-      - echo 'TEST1:${{TEST1}}'
+    title: Building Docker Image
+    type: build
+    image_name: roycodefresh/dockerignorecheck
+    working_directory: ./
+    dockerfile: Dockerfile
+#  dockerhub:
+#    type: push
+#    title: Standard push to dockerhub
+#    tag: master
+#    candidate: ${{build}}
+#  push1:
+#   type: push
+#   title: Standard push to registry1
+#   tag: ${{CF_REVISION}}
+#   candidate: ${{build}}
+#   registry: gcr
+#   image_name: 'cf-ci-1027/dic/${{CF_BRANCH}}'
+#  push2:
+#    type: push
+#    title: Standard push to registry2
+#    registry: 192.168.99.100:5002
+#    tag: hello-world
+#    candidate: ${{build}}
+#  ecr:
+#    type: push
+#    title: Standard push to amazon ECR
+#    registry: 839151377425.dkr.ecr.us-east-1.amazonaws.com
+#    tag: roycheck:hello-world
+#    candidate: ${{build}}
