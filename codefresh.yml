@@ -8,6 +8,7 @@ steps:
     dockerfile: Dockerfile
   comp:
     type: composition
+    working_directory: ${{build}}
     composition: ./dockercompose.yml
     composition_candidates:
       test_service:
