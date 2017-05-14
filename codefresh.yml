@@ -18,7 +18,7 @@ steps:
     composition_candidates:
       test_service:
         image: ${{build}}
-        command: /code/docker_wait_postgres.sh; sleep 30
+        command: ["sh", "-c", "/code/docker_wait_postgres.sh; sleep 30"]
         environment:
           - POSTGRES_HOST=postgres
           - POSTGRES_USER=hello
