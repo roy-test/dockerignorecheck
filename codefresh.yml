@@ -12,9 +12,9 @@ steps:
     composition:
       postgres:
         image: 'postgres:9.6'
-          environment:
-            - POSTGRES_USER=hello
-            - POSTGRES_PASSWORD=world
+        environment:
+          - POSTGRES_USER=hello
+          - POSTGRES_PASSWORD=world
     composition_candidates:
       test_service:
         image: ${build}
