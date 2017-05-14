@@ -9,11 +9,20 @@ steps:
   comp:
     type: composition
     working_directory: ${{build}}
-    composition: ./dockercompose.yml
+    composition:
+      postgres:
+        image: 'postgres:9.6'
+          environment:
+            - POSTGRES_USER=hello
+            - POSTGRES_PASSWORD=world
     composition_candidates:
       test_service:
-        image: alpine
-        command: sleep 600
+        image: ${build}
+        command: /code/docker_wait_postgres.sh; sleep 30
+        environment:
+          - POSTGRES_HOST=postgres
+          - POSTGRES_USER=hello
+          - POSTGRES_PASSWORD=world
 #  dockerhub:
 #    type: push
 #    title: Standard push to dockerhub
