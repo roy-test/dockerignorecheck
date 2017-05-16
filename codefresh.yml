@@ -10,19 +10,27 @@ steps:
     type: composition
     working_directory: ${{build}}
     composition:
-      postgres:
-        image: 'postgres:9.6'
-        environment:
-          - POSTGRES_USER=hello
-          - POSTGRES_PASSWORD=world
+      slower:
+        image: 'node:alpine'
+        command:
+          - node
+          - -e
+          - <
+            let interval = setInterval(() => { console.log('Slower stop') }, 5000);
+            
+            process.on('SIGTERM', () => {
+              setTimeout(() => { clearInterval(interval) }, 5000);
+            });
+      faster:
+        image: 'node:alpine'
+        command:
+          - node
+          - -e
+          - setInterval(() => { console.log('Faster stop') }, 5000)
     composition_candidates:
       test_service:
         image: ${{build}}
-        command: ["sh", "-c", "/code/docker_wait_postgres.sh; sleep 30"]
-        environment:
-          - POSTGRES_HOST=postgres
-          - POSTGRES_USER=hello
-          - POSTGRES_PASSWORD=world
+        command: ["sh", "-c", "sleep 10"]
 #  dockerhub:
 #    type: push
 #    title: Standard push to dockerhub
