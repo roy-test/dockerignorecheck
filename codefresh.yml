@@ -16,17 +16,24 @@ steps:
           - node
           - -e
           - >
-            let interval = setInterval(() => { console.log('Slower stop') }, 5000);
+            setInterval(() => { console.log('Slower stop') }, 5000);
             
             process.on('SIGTERM', () => {
-              setTimeout(() => { clearInterval(interval) }, 5000);
+              console.log('SIGTERM');
+              setTimeout(() => { process.exit(0) }, 5000);
             });
       faster:
         image: 'node:alpine'
         command:
           - node
           - -e
-          - setInterval(() => { console.log('Faster stop') }, 5000)
+          - >
+            setInterval(() => { console.log('Faster stop') }, 5000);
+            
+            process.on('SIGTERM', () => {
+              console.log('SIGTERM');
+              process.exit(0);
+            });
     composition_candidates:
       test_service:
         image: ${{build}}
