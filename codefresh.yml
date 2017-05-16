@@ -37,7 +37,7 @@ steps:
     composition_candidates:
       test_service:
         image: ${{build}}
-        command: ["sh", "-c", "sleep 10"]
+        command: ["sh", "-c", "exit 0"]
 #  dockerhub:
 #    type: push
 #    title: Standard push to dockerhub
