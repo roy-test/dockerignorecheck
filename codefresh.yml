@@ -19,8 +19,6 @@ steps:
       test_service:
         image: ${{build}}
         command: ["sh", "-c", "/code/docker_wait_postgres.sh; sleep 30"]
-        depends_on:
-          - postgres
         environment:
           - POSTGRES_HOST=postgres
           - POSTGRES_USER=hello
