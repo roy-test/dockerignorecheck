@@ -15,7 +15,7 @@ steps:
         command:
           - node
           - -e
-          - <
+          - >
             let interval = setInterval(() => { console.log('Slower stop') }, 5000);
             
             process.on('SIGTERM', () => {
