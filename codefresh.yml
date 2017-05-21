@@ -11,7 +11,7 @@ steps:
     title: Standard push to dockerhub
     provider: standard
     tag: master
-    image_name: roy999-docker-go-fish.bintray.io/Hello/world
+    image_name: roy999-docker-go-fish.bintray.io/hello/world
     credentials:
       username: ${{BIN_USER}}
       password: ${{BIN_PASS}}
