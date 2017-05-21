@@ -13,8 +13,8 @@ steps:
     tag: master
     image_name: roy999-docker-go-fish.bintray.io/Hello/world
     credentials:
-      username: ${BIN_USER}
-      password: ${BIN_PASS}
+      username: ${{BIN_USER}}
+      password: ${{BIN_PASS}}
     candidate: ${{build}}
 #  push1:
 #   type: push
