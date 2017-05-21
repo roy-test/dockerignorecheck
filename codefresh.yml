@@ -6,43 +6,12 @@ steps:
     image_name: roycodefresh/dockerignorecheck
     working_directory: ./
     dockerfile: Dockerfile
-  comp:
-    type: composition
-    working_directory: ${{build}}
-    composition:
-      slower:
-        image: 'node:alpine'
-        command:
-          - node
-          - -e
-          - >
-            setInterval(() => { console.log('Slower stop') }, 5000);
-            
-            process.on('SIGTERM', () => {
-              console.log('SIGTERM');
-              setTimeout(() => { process.exit(0) }, 5000);
-            });
-      faster:
-        image: 'node:alpine'
-        command:
-          - node
-          - -e
-          - >
-            setInterval(() => { console.log('Faster stop') }, 5000);
-            
-            process.on('SIGTERM', () => {
-              console.log('SIGTERM');
-              process.exit(0);
-            });
-    composition_candidates:
-      test_service:
-        image: ${{build}}
-        command: ["sh", "-c", "exit 0"]
-#  dockerhub:
-#    type: push
-#    title: Standard push to dockerhub
-#    tag: master
-#    candidate: ${{build}}
+  dockerhub:
+    type: push
+    title: Standard push to dockerhub
+    tag: master
+    image_name: roy999-docker-go-fish.bintray.io/Hello/world
+    candidate: ${{build}}
 #  push1:
 #   type: push
 #   title: Standard push to registry1
